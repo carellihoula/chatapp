@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import {FC} from 'react'
 import LeftSideOfMain from './leftMenus/LeftSideOfMain'
 import RightSideOfMain from './rigntConversations/RightSideOfMain'
 import styled from 'styled-components'
