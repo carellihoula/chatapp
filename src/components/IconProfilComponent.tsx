@@ -1,11 +1,15 @@
+import {FC} from 'react'
 import styled from "styled-components"
-import image from '../assets/images/profileIcon.png'
 
-const IconProfilComponent = () => {
+type Props = {
+    imageUrl: string
+}
+
+const IconProfilComponent: FC<Props> = ({imageUrl}) => {
 
   return (
     <IconProfilComponentStyled>
-        <img src ={image} alt="profile"/>
+        <img src ={imageUrl} alt="profile"/>
     </IconProfilComponentStyled>
   )
 }

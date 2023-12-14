@@ -12,7 +12,7 @@ const LeftSideOfMain: FC = () => {
 }
 
 const LeftSideOfMainStyle = styled.div`
-background: grey;
+background: #FFF;
 width: 30%;
 height: 100%;
 

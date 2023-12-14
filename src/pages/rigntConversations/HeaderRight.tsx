@@ -2,21 +2,21 @@ import  { FC } from 'react'
 import styled from 'styled-components'
 import IconProfilComponent from '../../components/IconProfilComponent'
 import IconStandard from '../../components/IconStandard'
-import { LiaSmsSolid } from "react-icons/lia"
 import { FiMoreVertical } from "react-icons/fi";
-import { MdGroups } from "react-icons/md";
-import iconStatus from '../../assets/images/StatusIcon.png'
-import profileImage from '../../assets/images/profileIcon.png'
+import { MdLocalPhone } from "react-icons/md";
+import { IoMdVideocam } from "react-icons/io";
+import { IoSearchOutline } from "react-icons/io5";
+import profileImage from '../../assets/images/Ellipse4.png'
 
-const HeaderLeft: FC = () => {
+const HeaderRight: FC = () => {
   return (
     <NavLeftStyled>
        <IconProfilComponent imageUrl={profileImage}/>
 
        <IconDiv>
-            <IconStandard size={24} Icon={MdGroups}/>
-            <IconStandard size={24} Icon={iconStatus}/>
-            <IconStandard size={24} Icon={LiaSmsSolid}/>
+            <IconStandard size={24} Icon={MdLocalPhone}/>
+            <IconStandard size={24} Icon={IoMdVideocam}/>
+            <IconStandard size={24} Icon={IoSearchOutline}/>
             <IconStandard size={24} Icon={FiMoreVertical}/>
        </IconDiv>
        
@@ -32,13 +32,12 @@ padding: 0 20px;
 background: #F0F2F5;
 width: 100%;
 height: 74px; 
-border-right: 1px solid #c9cdcf;
 `
 const IconDiv = styled.div`
 display: flex;
 align-items: center;
-gap:20px;
+gap:25px;
 
 `
 
-export default HeaderLeft
+export default HeaderRight;
