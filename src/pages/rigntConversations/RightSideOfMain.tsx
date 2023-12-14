@@ -14,9 +14,11 @@ const RightSideOfMain: FC = () => {
 }
 
 const RightSideOfMainStyle = styled.div`
+    display: flex;
     background: url(${bg}), lightgray 50% / cover no-repeat;
     width: 70%;
     height: 100%;
+    position: relative;
 `
 
 export default RightSideOfMain

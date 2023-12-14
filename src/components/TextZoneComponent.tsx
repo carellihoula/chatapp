@@ -37,11 +37,13 @@ const TextZoneComponent: FC = () => {
         onChange={handleChange}
         style={textAreaStyles}
       />
+      
     </TextZoneComponentStyled>
   )
 }
 
 const TextZoneComponentStyled = styled.div`
+    
     display:flex;
     align-items: center;
     width: 914px;
@@ -50,8 +52,15 @@ const TextZoneComponentStyled = styled.div`
     padding-left: 10px;
     border-radius: 10px;
     background: #FFF;
-
-
+    textarea{   
+    color: var(--Color-3, #6B7C85);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.35px;
+    }
 
 `
 export default TextZoneComponent
