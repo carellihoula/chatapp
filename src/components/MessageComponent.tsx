@@ -1,40 +1,55 @@
 import styled from "styled-components"
 type Props = {
     isSender: boolean;
+    message: string;
+    time:string
 }
 
 type MessageContentProps = {
     sender: boolean;
+    
+    
 }
 
-const MessageComponent:React.FC<Props> = ({isSender}) => {
+const MessageComponent:React.FC<Props> = ({isSender, message,time}) => {
 
   return (
-    <Messagestyled>
-      
       <MessageContent sender={isSender}>
-            I'm a software developer
+            <p>{message}</p>
+            <small>{time}</small>
       </MessageContent>
-    </Messagestyled>
-  )
+    )
 }
 
-const Messagestyled = styled.div`
-display: flex;
-
-`
 
 const MessageContent = styled.div<MessageContentProps>`
     display: flex;
-    width: 200px;
+    flex-direction: row;
+    max-width: 500px;
     padding: 8px 19px;
     font-family: 'Work Sans';
     align-items: flex-start;
     gap: 10px;
      //20px 20px 2px 20px'
-    border-radius:${props => props.sender ? '2px 20px 2px 20px' : '2px 20px 2px 20px'};
-    background: #e6e4e4;
+    border-radius:${props => props.sender  ? '2px 20px 2px 20px' : '2px 20px 2px 20px'};
+    background: ${props => props.sender ? '#FFF':'#d9fdd3'};
     margin-left:-10px;
+    margin-bottom: 10px;
+    position: relative;
+    
+
+    small{
+        text-align: right;
+        //padding-top:10px;
+        //padding-right: 10px;
+        position:absolute;
+        bottom: 2px;
+        right:5px;
+        
+    }
+    p{
+        margin-right: 20px;
+    }
 
 `
 
