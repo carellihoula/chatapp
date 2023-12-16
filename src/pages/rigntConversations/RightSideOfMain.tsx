@@ -4,7 +4,7 @@ import HeaderRight from './HeaderRight'
 import ChatAreaRightBottom from './ChatAreaRightBottom'
 import bg from '../../assets/images/backgroundWhatsapp.jpeg'
 import MessageComponent from '../../components/MessageComponent'
-import {messages} from '../../../utils'
+import {messages1} from '../../../utils/utils'
 
 interface ConversationAreaProps {
   isSender: boolean
@@ -19,7 +19,7 @@ const RightSideOfMain: FC = () => {
       <HeaderRight />
       <ConversationArea>
           {
-            messages.map((msg,index) =>{
+            messages1.map((msg,index) =>{
               const time = new Date(msg.timestamp).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})
               return (
                 <StyledMessageComponent isSender={msg.isSender} key={index}>

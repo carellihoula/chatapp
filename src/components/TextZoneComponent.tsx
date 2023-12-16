@@ -16,7 +16,6 @@ const TextZoneComponent: FC = () => {
     outline: 'none',
     resize: 'none',
     width: '100%',
-    overflow: 'hidden',
     paddingTop: '10px',
     boxSizing: 'border-box',
     minHeight: '100%',
@@ -46,7 +45,7 @@ const TextZoneComponentStyled = styled.div`
     
     display:flex;
     align-items: center;
-    width: 914px;
+    width: 100vh;
     height: 50px;
     gap: 10px;
     padding-left: 10px;
