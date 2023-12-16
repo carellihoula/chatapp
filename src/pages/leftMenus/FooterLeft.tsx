@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaLock } from "react-icons/fa";
 import styled from 'styled-components';
 
@@ -20,7 +19,7 @@ height: 50px;
 gap : 5px;
 position: absolute;
 bottom: 0;
-//background: red;
+background: #FFF;
 border-top: 1px solid #E9EDEF;
 
 span{

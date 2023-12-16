@@ -3,7 +3,14 @@ import styled from 'styled-components'
 import profileImage from '../../assets/images/profileIcon.png'
 import IconProfilComponent from '../../components/IconProfilComponent'
 
-const UserMessage:React.FC = () => {
+interface MessageComponentProps{
+    name: string;
+    message: string;
+    unreadNumber: number;
+    time: string;
+}
+
+const UserMessage:React.FC<MessageComponentProps> = ({name, message, unreadNumber, time }) => {
   return (
     <UserMessageStyled>
         <UserPhotoAndMessage>
@@ -11,14 +18,14 @@ const UserMessage:React.FC = () => {
             <IconProfilComponent imageUrl={profileImage}/>
             </div>
             <div className='name-message-author'>
-                <p className="name">Merry Longs</p>
-                <p className="message">Hello sir I’ve sent you the link</p>
+                <p className="name">{name}</p>
+                <p className="message">{message}</p>
             </div>
         </UserPhotoAndMessage>
         
         <div className='time-and-messages-unread'>
-            <small>12:28</small>
-            <p>203</p>
+            <small>{time}</small>
+            <p>{unreadNumber}</p>
         </div>
       
     </UserMessageStyled>
@@ -28,10 +35,15 @@ const UserMessage:React.FC = () => {
 const UserMessageStyled = styled.div`
 display: flex;
 justify-content: space-between;
-padding : 0 15px;
+padding : 10px 15px;
 align-items: center;
 gap:15px;
-
+//margin-bottom: 10px;
+//margin-top: 10px;
+&:hover{
+    background: #f0f2f5;
+    cursor: pointer;
+}
 .name-message-author{
     display: flex;
     flex-direction: column;
@@ -65,6 +77,7 @@ gap:15px;
 .time-and-messages-unread p{
     border-radius: 10px;
     background: var(--Green-1, #25D366);
+    text-align: center;
     padding: 5px; 
     color: #FFF;
     font-family: 'Work Sans';
@@ -72,7 +85,6 @@ gap:15px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    letter-spacing: -0.35px;
 }
 
 .time-and-messages-unread small{

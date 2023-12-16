@@ -6,6 +6,8 @@ import { IoFilterSharp } from "react-icons/io5";
 import DividerComponent from '../../components/DividerComponent';
 import FooterLeft from './FooterLeft';
 import UserMessage from './UserMessage';
+import {conversations} from '../../../utils/ListOfConversations'
+import { Message } from '../../../utils/utils';
 
 const LeftSideOfMain: FC = () => {
   const [value, setValue] = useState<string>('')
@@ -28,7 +30,21 @@ const LeftSideOfMain: FC = () => {
         <DividerComponent justifyBorder='full'/>
 
         <MessageOverview>
-            <UserMessage />
+            {
+              conversations.map((chat, index) => {
+                const lastElement: Message = chat.messages[chat.messages.length - 1];
+                const time: string = new Date(lastElement.timestamp).toLocaleTimeString([],{hour:'2-digit', minute:'2-digit'})
+                return (
+                  <>
+                    <UserMessage name={lastElement.senderName} unreadNumber={chat.unreadNumber} message={lastElement.text} time={time} key={index}/>
+                    {
+                      index !== conversations.length-1 && (<DividerComponent justifyBorder='right'/>)
+                    }
+                  </>
+                )
+              })
+            }
+            {/*<UserMessage /> */}
         </MessageOverview>
 
         <ContainerFootLeft>
@@ -60,13 +76,15 @@ const ContainerFootLeft = styled.div`
 display: flex;
 width: 100%;
 justify-content: center;
+background: #FFF;
 `
 
 const MessageOverview = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
-margin-top: 20px;
-margin-bottom: 20px;
+padding-bottom: 40px;
+overflow-y: scroll;
+max-height: 75%;
 `
 export default LeftSideOfMain

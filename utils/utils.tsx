@@ -11,6 +11,7 @@ export interface Conversation {
     conversationId: number;
     participants: number[];
     messages: Message[];
+    unreadNumber: number
 }
 
 export interface User{
@@ -47,19 +48,19 @@ export const messages1: Message[] = [
 export const messages2: Message[] = [
     { id: 1, text: "As-tu fini le projet ?", isSender: false, timestamp: "2021-12-16T11:00:00Z", isRead: true, senderName: "Alice" },
     { id: 2, text: "Oui, je l'ai envoyé hier.", isSender: true, timestamp: "2021-12-16T11:15:00Z", isRead: false, senderName: "Kevin" },
-    { id: 3, text: "Oui, je l'ai envoyé hier.", isSender: true, timestamp: "2021-12-16T11:15:00Z", isRead: false, senderName: "Alice" },
+    { id: 3, text: "Oui, je l'ai envoyé hier.", isSender: true, timestamp: "2021-12-16T11:15:00Z", isRead: true, senderName: "Alice" },
     { id: 4, text: "Oui, je l'ai envoyé hier.", isSender: true, timestamp: "2021-12-16T11:15:00Z", isRead: false, senderName: "Kevin" },
-    { id: 5, text: "Oui, je l'ai envoyé hier.", isSender: true, timestamp: "2021-12-16T11:15:00Z", isRead: false, senderName: "Alice" },
+    { id: 5, text: "Oui, je l'ai envoyé hier.", isSender: true, timestamp: "2021-12-16T11:15:00Z", isRead: true, senderName: "Alice" },
     { id: 6, text: "Oui, je l'ai envoyé hier.", isSender: true, timestamp: "2021-12-16T11:15:00Z", isRead: false, senderName: "Kevin" },// ... d'autres messages
 ]
 export const messages3: Message[] = [
     { id: 1, text: "On se voit demain pour la réunion ?", isSender: true, timestamp: "2021-12-16T15:00:00Z", isRead: true, senderName: "Roger" },
-    { id: 2, text: "Oui, à 9h. À demain !", isSender: false, timestamp: "2021-12-16T15:05:00Z", isRead: false, senderName: "Alice" },
+    { id: 2, text: "Oui, à 9h. À demain !", isSender: false, timestamp: "2021-12-16T15:05:00Z", isRead: true, senderName: "Alice" },
     // ... d'autres messages
     { id: 3, text: "On se voit demain pour la réunion ?", isSender: true, timestamp: "2021-12-16T15:00:00Z", isRead: true, senderName: "Alice" },
-    { id: 4, text: "Oui, à 9h. À demain !", isSender: false, timestamp: "2021-12-16T15:05:00Z", isRead: false, senderName: "Alice" },
-    { id: 5, text: "On se voit demain pour la réunion ?", isSender: true, timestamp: "2021-12-16T15:00:00Z", isRead: true, senderName: "Roger" },
-    { id: 6, text: "Oui, à 9h. À demain !", isSender: false, timestamp: "2021-12-16T15:05:00Z", isRead: false, senderName: "Alice" },
+    { id: 4, text: "Oui, à 9h. À demain !", isSender: false, timestamp: "2021-12-16T15:05:00Z", isRead: true, senderName: "Alice" },
+    { id: 5, text: "On se voit demain pour la réunion ?", isSender: true, timestamp: "2021-12-16T15:00:00Z", isRead: false, senderName: "Roger" },
+    { id: 6, text: "Oui, à 9h. À demain !", isSender: false, timestamp: "2021-12-16T15:05:00Z", isRead: true, senderName: "Alice" },
     { id: 7, text: "On se voit demain pour la réunion ?", isSender: true, timestamp: "2021-12-16T15:00:00Z", isRead: true, senderName: "Alice" },
     { id: 8, text: "Oui, à 9h. À demain !", isSender: false, timestamp: "2021-12-16T15:05:00Z", isRead: false, senderName: "Roger" },
 ]
