@@ -27,10 +27,9 @@ background: #F0F2F5;
 width: 100%;
 height: 90px;
 position: absolute;
-bottom: 0;
-
-  
+bottom: 0; 
 `
+
 const ContainerComponent = styled.div`
 display: flex;
 align-items: center;

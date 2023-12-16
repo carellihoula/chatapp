@@ -15,6 +15,15 @@ export const messages: MessageProps[]  = [
     { id: 7, text: "Vraiment ? Lequel ?", isSender: false, timestamp: "2021-12-16T09:16:00Z" },
     { id: 8, text: "Un thriller, très captivant.", isSender: true, timestamp: "2021-12-16T09:20:00Z" },
     { id: 9, text: "Ça a l'air intéressant !", isSender: false, timestamp: "2021-12-16T09:25:00Z" },
-    { id: 10, text: "Oui, je te le recommande.", isSender: true, timestamp: "2021-12-16T09:30:00Z" }
+    { id: 10, text: "Oui, je te le recommande.", isSender: true, timestamp: "2021-12-16T09:30:00Z" },
+    { id: 11, text: "Vraiment ? Lequel ?", isSender: false, timestamp: "2021-12-16T09:16:00Z" },
+    { id: 12, text: "Un thriller, très captivant.", isSender: true, timestamp: "2021-12-16T09:20:00Z" },
+    { id: 13, text: "Ça a l'air intéressant !", isSender: false, timestamp: "2021-12-16T09:25:00Z" },
+    { id: 14, text: "Oui, je te le recommande.", isSender: true, timestamp: "2021-12-16T09:30:00Z" },
+    { id: 15, text: "Oui, je te le recommande.", isSender: true, timestamp: "2021-12-16T09:30:00Z" },
+    { id: 16, text: "Vraiment ? Lequel ?", isSender: false, timestamp: "2021-12-16T09:16:00Z" },
+    { id: 17, text: "Un thriller, très captivant.", isSender: true, timestamp: "2021-12-16T09:20:00Z" },
+    { id: 18, text: "Ça a l'air intéressant !", isSender: false, timestamp: "2021-12-16T09:25:00Z" },
+    { id: 19, text: "Oui ff, je te le recommande.", isSender: true, timestamp: "2021-12-16T09:30:00Z" }
   ];
   

@@ -31,7 +31,8 @@ justify-content: space-between;
 padding: 0 20px;
 background: #F0F2F5;
 width: 100%;
-height: 74px; 
+height: 122px; 
+
 `
 const IconDiv = styled.div`
 display: flex;

@@ -31,7 +31,7 @@ const MessageContent = styled.div<MessageContentProps>`
     align-items: flex-start;
     gap: 10px;
      //20px 20px 2px 20px'
-    border-radius:${props => props.sender  ? '2px 20px 2px 20px' : '2px 20px 2px 20px'};
+    border-radius:${props => props.sender ? '20px 2px 20px 2px' : '2px 20px 2px 20px'};
     background: ${props => props.sender ? '#FFF':'#d9fdd3'};
     margin-left:-10px;
     margin-bottom: 10px;
@@ -49,6 +49,7 @@ const MessageContent = styled.div<MessageContentProps>`
     }
     p{
         margin-right: 20px;
+        font-weight: 600;
     }
 
 `

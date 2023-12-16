@@ -48,6 +48,9 @@ const ConversationArea = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px 40px;
+    overflow-y: scroll;
+    margin-bottom: 100px;
+    
     
     
 `
