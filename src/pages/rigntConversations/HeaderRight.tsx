@@ -31,7 +31,7 @@ justify-content: space-between;
 padding: 0 20px;
 background: #F0F2F5;
 width: 100%;
-height: 122px; 
+height: 74px; 
 
 `
 const IconDiv = styled.div`

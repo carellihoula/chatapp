@@ -7,14 +7,23 @@ import DividerComponent from '../../components/DividerComponent';
 import FooterLeft from './FooterLeft';
 import UserMessage from './UserMessage';
 import {conversations} from '../../../utils/ListOfConversations'
-import { Message } from '../../../utils/utils';
+import { Conversation, Message } from '../../../utils/utils';
+import {manageConversationSelected} from '../../redux/conversationOpened/conv.action'
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../redux/store';
+
 
 const LeftSideOfMain: FC = () => {
   const [value, setValue] = useState<string>('')
   //const borderTypes: string[] = ['full', 'center', 'left', 'right']
-
+  const dispatch = useDispatch<AppDispatch>()
+  
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
+  }
+
+  const handleConversation = (conv: Conversation) => {
+    dispatch(manageConversationSelected(conv));
   }
 
   return (
@@ -36,7 +45,10 @@ const LeftSideOfMain: FC = () => {
                 const time: string = new Date(lastElement.timestamp).toLocaleTimeString([],{hour:'2-digit', minute:'2-digit'})
                 return (
                   <>
-                    <UserMessage name={lastElement.senderName} unreadNumber={chat.unreadNumber} message={lastElement.text} time={time} key={index}/>
+                    <UserMessage name={lastElement.senderName} unreadNumber={chat.unreadNumber} 
+                    message={lastElement.text} time={time} key={index}
+                    handleConversation={()=>handleConversation(chat)}
+                    />
                     {
                       index !== conversations.length-1 && (<DividerComponent justifyBorder='right'/>)
                     }

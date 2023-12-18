@@ -8,11 +8,12 @@ interface MessageComponentProps{
     message: string;
     unreadNumber: number;
     time: string;
+    handleConversation: React.MouseEventHandler<HTMLDivElement> 
 }
 
-const UserMessage:React.FC<MessageComponentProps> = ({name, message, unreadNumber, time }) => {
+const UserMessage:React.FC<MessageComponentProps> = ({name, message, unreadNumber, time,handleConversation }) => {
   return (
-    <UserMessageStyled>
+    <UserMessageStyled onClick={handleConversation}>
         <UserPhotoAndMessage>
             <div>
             <IconProfilComponent imageUrl={profileImage}/>
