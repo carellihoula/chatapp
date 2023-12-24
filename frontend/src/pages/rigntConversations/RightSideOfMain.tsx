@@ -1,10 +1,9 @@
-import {FC, useState} from 'react'
+import {FC} from 'react'
 import styled from 'styled-components'
 import HeaderRight from './HeaderRight'
 import ChatAreaRightBottom from './ChatAreaRightBottom'
 import bg from '../../assets/images/backgroundWhatsapp.jpeg'
 import MessageComponent from '../../components/MessageComponent'
-import {Conversation, messages1} from '../../../utils/utils'
 import {conversations} from '../../../utils/ListOfConversations'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store';
@@ -15,7 +14,6 @@ interface ConversationAreaProps {
 
 
 const RightSideOfMain: FC = () => {
-  const [isSender, setisSender] = useState<boolean>(false)
   const conversationActive = useSelector((state: RootState ) => state.convOpened.selectedConversation)
 
   return (

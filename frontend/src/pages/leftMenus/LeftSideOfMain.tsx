@@ -8,16 +8,17 @@ import FooterLeft from './FooterLeft';
 import UserMessage from './UserMessage';
 import {conversations} from '../../../utils/ListOfConversations'
 import { Conversation, Message } from '../../../utils/utils';
-import {manageConversationSelected} from '../../redux/conversationOpened/conv.action'
+import {manageConversationSelected} from '../../redux/conversationActive/conv.action'
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
-
+import { MdArrowBack } from "react-icons/md";
 
 const LeftSideOfMain: FC = () => {
   const [value, setValue] = useState<string>('')
   //const borderTypes: string[] = ['full', 'center', 'left', 'right']
   const dispatch = useDispatch<AppDispatch>()
-  
+
+
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
   }
@@ -33,7 +34,7 @@ const LeftSideOfMain: FC = () => {
 
         <SearchAndFilterComponent>
           <SearchBarComponent value={value} handleChange={handleChange}/>
-          <IoFilterSharp color={'#54656F'} size={24}/>
+          <IoFilterSharp color={'#54656F'} size={24}/> 
         </SearchAndFilterComponent>
 
         <DividerComponent justifyBorder='full'/>

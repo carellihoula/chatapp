@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import IconStandard from './IconStandard'
 import { IoSearchOutline } from 'react-icons/io5'
+import { MdArrowBack } from 'react-icons/md';
 
 interface SearchProps {
     value: string;
@@ -12,7 +13,10 @@ interface SearchProps {
 const SearchBarComponent: React.FC<SearchProps> = ({value,handleChange}) => {
   return (
     <SearchBarComponentStyled>
-        <IconStandard Icon={IoSearchOutline} size={24}/>
+        {
+            value ? (<IconStandard Icon={MdArrowBack} size={24} />) 
+            :  (<IconStandard Icon={IoSearchOutline} size={24}/>)
+        }
         <input type="text" placeholder='Search or start new chat'
         value={value}
         onChange={handleChange}

@@ -3,12 +3,18 @@
 import styled from "styled-components"
 import IconStandard from "./IconStandard"
 import { MdPhotoCamera } from "react-icons/md";
-import { ChangeEvent, FC, useState } from "react";
+import { FC, useState } from "react";
 
-const TextZoneComponent: FC = () => {
+interface ComponentProps{
+  value: string;
+  handleChange: React.ChangeEventHandler<HTMLTextAreaElement>;
+  handleResizeHeight: React.FormEventHandler<HTMLTextAreaElement>;
+  textAreaHeight: string | number;
+}
 
-  const [text, setText] = useState<string>('')
 
+const TextZoneComponent: FC<ComponentProps> = ({value, handleChange, handleResizeHeight,textAreaHeight}) => {
+  
   const textAreaStyles: React.CSSProperties = {
     display: 'flex',
     alignItems: 'center',
@@ -18,23 +24,22 @@ const TextZoneComponent: FC = () => {
     width: '100%',
     paddingTop: '10px',
     boxSizing: 'border-box',
-    minHeight: '100%',
+    height: textAreaHeight,
+    overflow: 'hidden',
     border: 'none',
     borderRadius: '10px',
     fontSize: '16px',
    
   }
-
-  const handleChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
-    setText(e.target.value)
-  }
+  
   return (
     <TextZoneComponentStyled>
       <IconStandard Icon={MdPhotoCamera} size={24}/>
       <textarea  placeholder="type a message" 
-        value={text}
+        value={value}
         onChange={handleChange}
         style={textAreaStyles}
+        onInput={handleResizeHeight}
       />
       
     </TextZoneComponentStyled>

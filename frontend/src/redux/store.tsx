@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import conversationReducer from './conversationOpened/conv.reducer'
+import conversationReducer from './conversationActive/conv.reducer'
 
 
 const rootReducer = combineReducers({
